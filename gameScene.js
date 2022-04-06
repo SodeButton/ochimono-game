@@ -103,7 +103,7 @@ class GameScene extends Phaser.Scene {
 		this.keyZ = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Z);
 		this.keyX = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
 
-		this.mino = new Mino(5, 10, 0, 0);
+		this.mino = new Mino(5, 0, 0, 0);
 		this.minoVx = 0;
 		this.field = new Field();
 		this.mino.draw();
@@ -126,7 +126,7 @@ class GameScene extends Phaser.Scene {
 
 		console.log(delta);
 
-		if (this.fc % 20 === 19) {
+		if (this.fc % 120 === 0) {
 			let futureMino = this.mino.copy();
 			futureMino.y += 1;
 			if (this.isMinoMovable(futureMino, this.field)) {
